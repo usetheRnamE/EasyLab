@@ -2,15 +2,19 @@
 #include <vector>
 #include <iostream>
 
+struct ExtremumID
+{
+	unsigned int maxIndex = -1, minIndex = -1;
+} extremumID;
+
 class GrossError
 {
 public:
 	void GrossErrorDetection();
 
 private:
-	void EvaluateData(std::vector<double>& data);
-	double AvarageVal(std::vector<double>& data);
+	void GetGrossError(const std::vector<double>& data);
 	void AskConfirmation();
-	void DeleteGrossError();
+	void DeleteGrossError(const bool deleteMin = false, const bool deleteMax = false);
 };
 
