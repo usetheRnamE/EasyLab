@@ -12,7 +12,7 @@ Data* Data::GetInstance()
 
 void Data::SetDataByElement(const double& userData, const int& index)
 { 
-	data[index] = userData;
+    data[index] = userData;
 }
 
 std::vector<double>& Data::GetData()

@@ -3,8 +3,18 @@
 
 class RandomError
 {
+private:
+	Data* data;
+	static double avarage;
+
+public:
+	void CalculateRandErr();
 
 private:
-	double AvarageVal(const std::vector<double>& data);
+	bool RandErrExist();
+	double SumCount(double (*function)(const double&));
+	double AvarageVal();
+	double FindDeltasSum();
+	double Func();
 };
 
