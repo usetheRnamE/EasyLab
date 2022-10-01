@@ -25,13 +25,13 @@ void GrossError::GetGrossError(const std::vector<double>& data)
 		if (minValue > data[i])
 		{
 			minValue = data[i];
-			extremumID.minIndex = i;
+			Id->min = i;
 		}
 
 		if (maxValue < data[i])
 		{
 			maxValue = data[i];
-			extremumID.maxIndex = i;
+			Id->max = i;
 		}
 	}
 
@@ -47,11 +47,11 @@ void GrossError::AskConfirmation()
 
 void GrossError::DeleteGrossError(const bool deleteMin = false, const bool deleteMax = false)
 {
-	Data* data;
+	Data* data = data->GetInstance();
 
 	if(deleteMax)
-       data->GetData().erase(data->GetData().begin() + extremumID.maxIndex);
+       data->GetData().erase(data->GetData().begin() + Id->max);
 	
 	if(deleteMin)
-	   data->GetData().erase(data->GetData().begin() + extremumID.minIndex);
+	   data->GetData().erase(data->GetData().begin() + Id->min);
 }

@@ -1,16 +1,23 @@
 #pragma once
 #include <vector>
+#include <functional>
+
+#include "Data.h"
 
 class RandomError
 {
 private:
 	Data* data;
-	static double avarage;
+    static double avarage;
 
 public:
-	void CalculateRandErr();
+	RandomError() : data(data->GetInstance())
+	{
+		CalculateRandErr();
+	}
 
 private:
+	void CalculateRandErr();
 	bool RandErrExist();
 	double SumCount(double (*function)(const double&));
 	double AvarageVal();

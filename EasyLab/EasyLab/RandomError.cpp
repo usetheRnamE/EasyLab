@@ -9,14 +9,12 @@ void RandomError::CalculateRandErr()
 		return;
 	}
 
-
+	Func();
 }
 
 bool RandomError::RandErrExist()
 {
 	if(data->GetData().size() == 1) return true;
-
-    avarage = AvarageVal();
 
 	for(auto& value : data->GetData())
 	   if(avarage ==  value) return true;
@@ -36,17 +34,17 @@ double RandomError::SumCount(double (*function)(const double&))
 	return sum;
 }
 
-double RandomError::AvarageVal()
+inline double RandomError::AvarageVal()
 {
 	return SumCount([](const double& val) { return val; });
 }
 
-double RandomError::FindDeltasSum()
+inline double RandomError::FindDeltasSum()
 {
 	return SumCount([](const double& val) { return pow(val - avarage, 2); });
 }
 
 double RandomError::Func()
 {
-	
+	return /*Student coef * */ sqrt(FindDeltasSum() / (data->GetData().size() - 1));
 }

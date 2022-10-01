@@ -1,6 +1,8 @@
 #include "Main.h"
 #include "Data.h"
+
 #include "GrossError.h"
+#include "RandomError.h"
 
 int main()
 {
@@ -18,4 +20,7 @@ int main()
 
 	GrossError grossError;
 	grossError.GrossErrorDetection();
+
+	RandomError randError;
+	randError.CalculateRandErr();
 }
