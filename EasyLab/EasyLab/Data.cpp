@@ -10,12 +10,12 @@ Data* Data::GetInstance()
     return instance;
 }
 
-void Data::SetDataByElement(const double& userData, const int& index)
+void Data::SetDataByElement(const std::vector<double>& userData)
 { 
-    data[index] = userData;
+    *data = userData;
 }
 
-std::vector<double>& Data::GetData()
+std::vector<double>* Data::GetData()
 {
 	return data;
 }

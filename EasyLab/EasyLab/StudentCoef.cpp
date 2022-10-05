@@ -2,7 +2,7 @@
 
 void StudentCoef::ReadFile()
 {
-    std::ifstream fJson("StudentCoef.json");
+    /*std::ifstream fJson("StudentCoef.json");
     std::stringstream buffer;
     buffer << fJson.rdbuf();
     auto json = nlohmann::json::parse(buffer.str());
@@ -19,5 +19,5 @@ void StudentCoef::ReadFile()
             qCount++;
             std::cout << qCount << ". " << opt << "\n";
         }
-        std::cout << "Answer: " << question["answer"] << "\n";
+        std::cout << "Answer: " << question["answer"] << "\n";*/
 }

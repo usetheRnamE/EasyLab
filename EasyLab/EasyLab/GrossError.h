@@ -3,6 +3,7 @@
 #include <iostream>
 
 #include "ErrorsInterface.h"
+#include "Data.h"
 
 struct ExtremumID
 {
@@ -16,13 +17,10 @@ private:
 	 Data* data;
 
 public:
-	GrossError() : Id(new ExtremumID()), data(Data::GetInstance()) {}
+	GrossError() : Id(new ExtremumID()), data(data->GetInstance()) {}
 	~GrossError() { delete Id; }
 
-	void ErrorDetection() override
-	{
-		GetGrossError(data->GetData());
-	}
+	void ErrorDetect() override;
 
 private:
 	

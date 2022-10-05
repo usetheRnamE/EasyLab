@@ -7,7 +7,7 @@
 class Data
 {
 private:
-    std::vector<double> data;
+    std::vector<double>* data = new std::vector<double>;
    // std::list<double> biggerData; use if data bigger than 64 B
 
 private:
@@ -24,6 +24,6 @@ public:
 
     static Data* GetInstance();
 
-    void SetDataByElement(const double& userData, const int& index);
-    std::vector<double>& GetData();
+    void SetDataByElement(const std::vector<double>& userData);
+    std::vector<double>* GetData();
 };
