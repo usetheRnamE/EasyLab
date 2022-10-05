@@ -19,8 +19,8 @@ int main()
 		data->SetDataByElement(testData[i], i);
 
 	GrossError grossError;
-	grossError.GrossErrorDetection();
+	grossError.ErrorDetection();
 
 	RandomError randError;
-	randError.CalculateRandErr();
+	randError.ErrorDetection();
 }

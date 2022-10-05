@@ -1,17 +1,6 @@
 #include "RandomError.h"
 #include "Data.h"
 
-void RandomError::CalculateRandErr()
-{
-	if(!RandErrExist()) 
-	{
-	   //return to main and say that random error doesn`t exist
-		return;
-	}
-
-	Func();
-}
-
 bool RandomError::RandErrExist()
 {
 	if(data->GetData().size() == 1) return true;

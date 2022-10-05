@@ -1,13 +1,6 @@
 #include "GrossError.h"
 #include "Data.h"
 
-void GrossError::GrossErrorDetection()
-{
-	Data* data = Data::GetInstance();
-
-	GetGrossError(data->GetData());
-}
-
 void GrossError::GetGrossError(const std::vector<double>& data)
 {
 	double grossError = 0, minValue = 0, maxValue = 0;
@@ -47,8 +40,6 @@ void GrossError::AskConfirmation()
 
 void GrossError::DeleteGrossError(const bool deleteMin = false, const bool deleteMax = false)
 {
-	Data* data = data->GetInstance();
-
 	if(deleteMax)
        data->GetData().erase(data->GetData().begin() + Id->max);
 	
