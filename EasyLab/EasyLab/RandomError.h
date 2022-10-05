@@ -9,27 +9,20 @@ class RandomError : public ErrorsInterface
 {
 private:
 	Data* data;
-    static double avarage;
+    double avarage = 0;
+
+double Func();
 
 public:
 	RandomError() : data(data->GetInstance()) {}
 
-	void ErrorDetection() override
-	{
-		if (!RandErrExist())
-		{
-			//return to main and say that random error doesn`t exist
-			return;
-		}
-
-		Func();
-	}
+	void ErrorDetect() override;
 
 private:
 	bool RandErrExist();
-	double SumCount(double (*function)(const double&));
+	double SumCount(std::function<double(const double&)>);
 	double AvarageVal();
 	double FindDeltasSum();
-	double Func();
+
 };
 

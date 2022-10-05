@@ -1,8 +1,14 @@
 #include "Main.h"
 #include "Data.h"
 
+#include "ErrorsInterface.h"
 #include "GrossError.h"
 #include "RandomError.h"
+
+inline void GetError(ErrorsInterface* errorToDetect)
+{
+	errorToDetect->ErrorDetect();
+}
 
 int main()
 {
@@ -13,14 +19,13 @@ int main()
 
 	const std::vector<double> testData = {0.589, 0.588, 0.590, 0.587, 1};
  
-	data->GetData().resize(testData.size());
+	data->GetData()->resize(testData.size());
 
-	for (int i = 0; i < testData.size(); i++)
-		data->SetDataByElement(testData[i], i);
+	data->SetDataByElement(testData);
 
-	GrossError grossError;
-	grossError.ErrorDetection();
+	GrossError* grossError = new GrossError();
+	RandomError* randError = new RandomError();
 
-	RandomError randError;
-	randError.ErrorDetection();
+	GetError(grossError);
+	GetError(randError);
 }

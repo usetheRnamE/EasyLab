@@ -2,5 +2,5 @@
 class ErrorsInterface
 {
 public:
-	virtual void ErrorDetection() = 0;
+	virtual void ErrorDetect() = 0;
 };
