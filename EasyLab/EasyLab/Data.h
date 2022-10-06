@@ -24,6 +24,6 @@ public:
 
     static Data* GetInstance();
 
-    void SetDataByElement(const std::vector<double>& userData);
+    void SetData(const std::vector<double>& userData);
     std::vector<double>* GetData();
 };

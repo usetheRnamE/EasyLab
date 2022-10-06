@@ -10,7 +10,7 @@ Data* Data::GetInstance()
     return instance;
 }
 
-void Data::SetDataByElement(const std::vector<double>& userData)
+void Data::SetData(const std::vector<double>& userData)
 { 
     *data = userData;
 }
