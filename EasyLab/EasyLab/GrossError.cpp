@@ -3,32 +3,34 @@
 
 void GrossError::ErrorDetect()
 {
-	GetGrossError(*data->GetData());
+	GetGrossError();
 }
 
-void GrossError::GetGrossError(const std::vector<double>& data)
+void GrossError::GetGrossError()
 {
 	double grossError = 0, minValue = 0, maxValue = 0;
 
 	bool isOnce = false;
 
-	for (int i = 0; i < data.size(); i++)
+	for (int i = 0; i < data->GetData()->size(); i++)
 	{
+		#define ValAtI data->GetData()->operator[](i)
+
 		if (!isOnce)
 		{
-			minValue = data[i];
+			minValue = ValAtI;
 			isOnce = true;
 		}
 
-		if (minValue > data[i])
+		if (minValue > ValAtI)
 		{
-			minValue = data[i];
+			minValue = ValAtI;
 			Id->min = i;
 		}
 
-		if (maxValue < data[i])
+		if (maxValue < ValAtI)
 		{
-			maxValue = data[i];
+			maxValue = ValAtI;
 			Id->max = i;
 		}
 	}

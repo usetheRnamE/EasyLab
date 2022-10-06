@@ -24,7 +24,7 @@ public:
 
 private:
 	
-	void GetGrossError(const std::vector<double>& data);
+	void GetGrossError();
 	void AskConfirmation();
 	void DeleteGrossError(const bool deleteMin, const bool deleteMax);
 };

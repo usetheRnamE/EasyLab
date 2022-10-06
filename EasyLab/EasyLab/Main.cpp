@@ -21,7 +21,7 @@ int main()
  
 	data->GetData()->resize(testData.size());
 
-	data->SetDataByElement(testData);
+	data->SetData(testData);
 
 	GrossError* grossError = new GrossError();
 	RandomError* randError = new RandomError();
